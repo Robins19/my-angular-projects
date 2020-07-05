@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavbarService } from './service/navbar.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(    public navbarSvc: NavbarService,
+    ){
+      console.log(this.navbarSvc,"==============")
+    }
   title = 'demo';
 }

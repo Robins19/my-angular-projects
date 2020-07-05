@@ -1,0 +1,16 @@
+.dropdown-menu{
+	right:0 !important;
+	left:auto;
+  }
+  .dropdown-toggle::after {
+	display:none !important;
+  }
+  .app-nav__item {
+    display: block;
+    padding: 20px;
+    line-height: 20px;
+    color: #000;
+    -webkit-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+  }

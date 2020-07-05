@@ -1,1 +1,76 @@
-<p>login works!</p>
+<div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="0" fxLayoutGap.xs="0">
+  <div class="item item-1" fxFlex="50%" style="background-color:blue;height: 100vh;">Item 1</div>
+  <div class="item item-2" fxFlex="50%" style="background-color:white;height: 100vh;">
+    <div class="login-page">
+      <mat-card class="mat-elevation-z12 main-card">
+        <mat-card-title style="text-align:center;">SignIn</mat-card-title>
+        <!-- <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+          <mat-tab > -->
+              <mat-card-content>
+                <form action="" autocomplete="off">
+                  <div>
+                  <mat-label>Username</mat-label>
+                  <mat-form-field appearance="outline" >
+                    <input
+                      matInput
+                      placeholder="Enter username"
+                      required
+                      name="email"
+                      autocomplete="off"
+                      ngModel
+                      #email="ngModel">
+                      <mat-error *ngIf="email.invalid">Email is required</mat-error>
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-label>Password</mat-label>
+                  <mat-form-field appearance="outline">
+                    <input
+                      matInput
+                      placeholder="Enter password"
+                      type="password"
+                      required
+                      minlength="6"
+                      name="password"
+                      autocomplete="off"
+                      ngModel
+                      #password="ngModel">
+                      <mat-error
+                        *ngIf="password.errors && password.errors.required">
+                        Password is required
+                      </mat-error>
+                      <mat-error
+                        *ngIf="password.errors && password.errors.minlength">
+                        Password must be of length 6
+                      </mat-error>
+                  </mat-form-field>
+                </div>
+              
+                  <mat-checkbox class="check-box">Remember Me!</mat-checkbox>
+                  <div  class="forgot-password">
+                    <span class="forgot-password-button">Forgot Password?</span> <span class="click-here-button"> Click here</span>
+                  </div>
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    routerLink="/tabs"
+                    class="login-button">
+                    Sign In
+                  </button>
+                  <!-- <mat-card-title style="text-align:center;"> -->
+                    <div class="new-user">
+                      <span class="new-users-button">New user?</span>
+                      <span class="signup-button"> SignUp Now</span>
+                    </div>
+                    
+                  <!-- </mat-card-title> -->
+                </form>
+              </mat-card-content>
+          <!-- </mat-tab>
+        </mat-tab-group> -->
+      </mat-card>
+    </div>
+    
+  </div>
+</div>
+

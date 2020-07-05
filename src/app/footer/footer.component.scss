@@ -1,0 +1,19 @@
+.footbar {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin-top: 150px;
+    background: #3f51b5;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;	
+  }
+  .copyright{
+    position: absolute;
+    top: 24px;
+    left: 99px;
+  }
+  .privacy{
+    position: absolute;
+    top: 24px;
+    right: 99px;
+  }

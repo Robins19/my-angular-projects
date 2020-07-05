@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarService } from '../service/navbar.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(  private navbarSvc: NavbarService,) { }
 
   ngOnInit(): void {
+    this.navbarSvc.hideBothNavbar()
+    this.navbarSvc.hideFooter();
   }
 
 }
