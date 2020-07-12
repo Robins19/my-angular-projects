@@ -3,19 +3,18 @@ import { Router } from '@angular/router';
 import { NavbarService } from 'src/app/service/navbar.service';
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss']
+    selector: 'app-landing',
+    templateUrl: './landing.component.html',
+    styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
 
-    public isServices: boolean = true;
-    public isSchedule: boolean;
-    public isAddress: boolean;
-    public isMaids: boolean;
-    public isPayment: boolean;
+    isDescription: boolean = true;
+    isRecommendations: boolean;
+    isAnalysis: boolean ;
+    isAlternative: boolean ;
     public currentTab: string;
-    public arrayall: any=[];
+    public arrayall: any = [];
 
     constructor(
         private router: Router,
@@ -30,46 +29,37 @@ export class LandingComponent implements OnInit {
 
     getUiPartToShow(uiPart) {
         switch (uiPart) {
-            case 'services':
-                this.isServices = true;
-                this.isSchedule = false;
-                this.isAddress = false;
-                this.isMaids = false;
-                this.isPayment = false;
+            case 'description':
+                this.isDescription = true;
+                this.isRecommendations = false;
+                this.isAnalysis = false;
+                this.isAlternative = false;
                 break;
-            case 'schedule':
-                this.isServices = false;
-                this.isSchedule = true;
-                this.isAddress = false;
-                this.isMaids = false;
-                this.isPayment = false;
+            case 'recommendations':
+                this.isDescription = false;
+                this.isRecommendations = true;
+                this.isAnalysis = false;
+                this.isAlternative = false;
                 break;
-            case 'address':
-                this.isServices = false;
-                this.isSchedule = false;
-                this.isAddress = true;
-                this.isMaids = false;
-                this.isPayment = false;
+            case 'analysis':
+                this.isDescription = false;
+                this.isRecommendations = false;
+                this.isAnalysis = true;
+                this.isAlternative = false;
                 break;
-            case 'maids':
-                this.isServices = false;
-                this.isSchedule = false;
-                this.isAddress = false;
-                this.isMaids = true;
-                this.isPayment = false;
+            case 'alternative':
+                this.isDescription = false;
+                this.isRecommendations = false;
+                this.isAnalysis = false;
+                this.isAlternative = true;
                 break;
-            case 'payment':
-                this.isServices = false;
-                this.isSchedule = false;
-                this.isAddress = false;
-                this.isMaids = false;
-                this.isPayment = true;
-                break;
+
         }
     }
 
 
     getDataFromTabs(event) {
+        debugger;
         this.currentTab = event.uiName;
         this.getUiPartToShow(event.uiName);
     }
@@ -77,7 +67,7 @@ export class LandingComponent implements OnInit {
         this.currentTab = event;
         this.getUiPartToShow(event);
     }
-    
+
     ngOnDestroy() {
 
     }

@@ -43,7 +43,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarService } from './service/navbar.service';
 import { FooterComponent } from './footer/footer.component';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { GridComponent } from './forms/grid/grid.component';
+import { DataShareService } from './service/share.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,6 @@ import { GridComponent } from './forms/grid/grid.component';
     LoginComponent,
     NavbarComponent,
     FooterComponent,
-    GridComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +68,7 @@ import { GridComponent } from './forms/grid/grid.component';
     MatGridListModule,
     MatToolbarModule
   ],
-  providers: [NavbarService],
+  providers: [NavbarService,DataShareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

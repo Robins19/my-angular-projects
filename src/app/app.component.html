@@ -1,12 +1,9 @@
 
 
 
-
-<div fxLayout="column" fxFlexFill>
     <app-navbar *ngIf="navbarSvc.visibleSimpleNavbar"></app-navbar>
 
-    <div fxFlex>
+
         <router-outlet></router-outlet>
-    </div>
+
     <app-footer *ngIf="navbarSvc.visibleFooter"></app-footer>
-</div>

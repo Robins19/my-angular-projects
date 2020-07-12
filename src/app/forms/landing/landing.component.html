@@ -1,15 +1,19 @@
-<div class="bg-clf ">
-    <div class="container">
-        <div class="mb-hidden bx-shadow" >
+<div class="parent">
+    <div>
+        <div>
             <app-tabs [activeTab]="currentTab"></app-tabs>
         </div>
-        <div class="card">
-            <div class="card-body bx-shadow">
-                <div class="classic-tabs">
-                    <div class="tab-content card" id="myClassicTabContentOrange">
-                        <app-description *ngIf="isServices" (dataFromServices)="getDataFromTabs($event)"></app-description>
-                        <app-recommendation *ngIf="isSchedule" (dataFromSchedule)="getDataFromTabs($event)"
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <app-description *ngIf="isDescription" (dataFromDescription)="getDataFromTabs($event)">
+                        </app-description>
+                        <app-recommendation *ngIf="isRecommendations"
+                            (dataFromRecommendations)="getDataFromTabs($event)"
                             (backFromSchedule)="onBackEvent($event)"></app-recommendation>
+                        <app-analysis *ngIf="isAnalysis" (dataFromRecommendations)="getDataFromTabs($event)"
+                            (backFromSchedule)="onBackEvent($event)"></app-analysis>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { IDescription } from '../interface';
+import { BookingTabsUiDataModel } from '../interface';
+import { DataShareService } from 'src/app/service/share.service';
 
 @Component({
   selector: 'app-description',
@@ -7,11 +8,17 @@ import { IDescription } from '../interface';
   styleUrls: ['./description.component.scss']
 })
 export class DescriptionComponent implements OnInit {
-  @Output() dataFromServices = new EventEmitter<IDescription>();
-
-  constructor() { }
+  @Output() dataFromDescription = new EventEmitter();
+  public bookingTabsUiDataObj: BookingTabsUiDataModel = <BookingTabsUiDataModel>{};
+  constructor(public dataShareService:DataShareService) { }
 
   ngOnInit(): void {
   }
 
+
+  onClick(){
+    var dataObj = Object.assign({}, this.bookingTabsUiDataObj);
+     dataObj.uiName = "recommendations";
+    this.dataFromDescription.emit(dataObj);
+  }
 }
